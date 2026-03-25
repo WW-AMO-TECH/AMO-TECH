@@ -39,7 +39,7 @@ const Navbar = () => {
         <a href="#" className="text-xl font-bold tracking-tight">
           {/* <span className="gradient-text">AMO-TECH </span>
           <span className="text-foreground">Agency</span> */}
-          <img src="public/amotech.png" alt="Logo" className="h-8 px-2 w-auto" />
+          <img src="src/assets/amotech.svg" alt="Logo" className="h-8 px-2 w-auto" />
         </a>
 
         {/* Desktop */}
