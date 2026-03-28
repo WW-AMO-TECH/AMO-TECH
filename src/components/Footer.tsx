@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           <div>
             <a href="#" className="text-xl font-bold tracking-tight mb-4 block">
-              <img src="src/assets/amotech.svg" alt="Logo" className="h-8 w-auto" />
+              <img src="public/amotech.svg" alt="Logo" className="h-8 w-auto" />
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Building modern, performant websites and web applications for businesses worldwide.
