@@ -130,7 +130,7 @@ const Contact = () => {
             </a> */}
 
             <a
-              href="https://calendly.com/amo-tech/consultation-demo"
+              href="https://calendly.com/brightrichmond/consultation"
               className="glass-card glow-border p-6 flex items-center gap-4 hover:bg-card/80 transition-all duration-300 group"
             >
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
