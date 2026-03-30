@@ -57,17 +57,51 @@ const Contact = () => {
         <AnimatePresence>
           {toast.message && (
             <motion.div
-              initial={{ opacity: 0, y: -50, scale: 0.8 }}
+              key="toast"
+              initial={{ opacity: 0, y: -80, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -50, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
-              className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-full shadow-lg text-white font-semibold text-sm ${
-                toast.type === "success"
-                  ? "bg-[#297BFF]"
-                  : "bg-red-500"
-              }`}
+              exit={{ opacity: 0, y: -80, scale: 0.95 }}
+              transition={{ duration: 0.25 }}
+              drag="y"
+              dragConstraints={{ top: -120, bottom: 0 }}
+              dragElastic={0.25}
+              whileDrag={{ scale: 0.96 }}
+              onDragEnd={(e, info) => {
+                if (info.offset.y < -50) {
+                  setToast({ message: "", type: "" });
+                }
+              }}
+              className="fixed z-50 top-4 left-0 w-full px-4 flex justify-center"
+              style={{
+                paddingTop: "env(safe-area-inset-top)",
+              }}
             >
-              {toast.message}
+              <div
+                className={`
+                  w-full max-w-md flex items-center gap-3 px-4 py-3
+                  rounded-2xl backdrop-blur-md shadow-lg
+                  text-white
+                  border md:border-2 border
+                  ${toast.type === "success"
+                    ? "bg-[#297BFF]/20 border-[#297BFF]/40"
+                    : "bg-red-500/20 border-red-300/40"}
+                `}
+                style={{
+                  boxShadow: "0 8px 25px rgba(0,0,0,0.12)",
+                }}
+              >
+                {/* Icon */}
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
+                  <span className="text-sm">
+                    {toast.type === "success" ? "✉️" : "⚠️"}
+                  </span>
+                </div>
+
+                {/* Message */}
+                <p className="text-sm font-medium leading-snug">
+                  {toast.message}
+                </p>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

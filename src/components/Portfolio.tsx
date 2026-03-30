@@ -8,14 +8,21 @@ const projects = [
     category: "Roofing Services Platform",
     description: "Complete redesign of a roofing company website with service showcases, project galleries, quote request forms, and customer lead generation.",
     tech: ["React", "Mapbox", "Firebase"],
+    image: "https://images.unsplash.com/photo-1755114203680-d39d95efa82c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc3BoYWx0JTIwc2hpbmdsZSUyMGhvdXNlJTIwcm9vZnxlbnwxfHx8fDE3NzQ4MzYwNTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  },
+  {
+    title: "Real Estate Platform",
+    category: "Web Application",
+    description: "Modern property management system with listings, virtual tours, client inquiries, and easy online viewing bookings.",
+    tech: ["React", "AWS", "WebRTC"],
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Restaurant Chain Website",
     category: "Business Website",
-    description: "Full-stack e-commerce solution with inventory management, payment processing, and automated order fulfillment.",
-    tech: ["Next.js", "Stripe", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+    description: "Multi-location restaurant website with online ordering, reservation system, and loyalty program integration.",
+    tech: ["WordPress", "WooCommerce", "APIs"],
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
   },
   {
     title: "Healthcare Booking App",
@@ -32,18 +39,11 @@ const projects = [
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
   },
   {
-    title: "Restaurant Chain Website",
+    title: "E-Commerce Platform",
     category: "Business Website",
-    description: "Multi-location restaurant website with online ordering, reservation system, and loyalty program integration.",
-    tech: ["WordPress", "WooCommerce", "APIs"],
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
-  },
-  {
-    title: "EdTech Learning Platform",
-    category: "Web Application",
-    description: "Interactive learning management system with video streaming, progress tracking, and certification.",
-    tech: ["React", "AWS", "WebRTC"],
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop",
+    description: "Full-stack e-commerce solution with inventory management, payment processing, and automated order fulfillment.",
+    tech: ["Next.js", "Stripe", "PostgreSQL"],
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
   },
 ];
 
