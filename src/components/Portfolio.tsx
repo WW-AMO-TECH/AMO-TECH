@@ -4,11 +4,11 @@ import { ExternalLink, FileText } from "lucide-react";
 
 const projects = [
   {
-    title: "SaaS Dashboard",
-    category: "Web Application",
-    description: "A comprehensive analytics dashboard for a fintech startup with real-time data visualization and reporting.",
-    tech: ["React", "TypeScript", "D3.js"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    title: "Roofing Website Upgrade",
+    category: "Roofing Services Platform",
+    description: "Complete redesign of a roofing company website with service showcases, project galleries, quote request forms, and customer lead generation.",
+    tech: ["React", "Mapbox", "Firebase"],
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
   },
   {
     title: "E-Commerce Platform",
@@ -25,11 +25,11 @@ const projects = [
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop",
   },
   {
-    title: "Real Estate Portal",
-    category: "Website Redesign",
-    description: "Complete redesign of a property listing platform with advanced search, virtual tours, and lead generation.",
-    tech: ["React", "Mapbox", "Firebase"],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
+    title: "SaaS Dashboard",
+    category: "Web Application",
+    description: "A comprehensive analytics dashboard for a fintech startup with real-time data visualization and reporting.",
+    tech: ["React", "TypeScript", "D3.js"],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
   },
   {
     title: "Restaurant Chain Website",
@@ -84,11 +84,11 @@ const Portfolio = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-                  <button className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg flex items-center gap-2 hover:bg-primary/90 transition-colors">
+                  {/* <button className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg flex items-center gap-2 hover:bg-primary/90 transition-colors">
                     <ExternalLink size={14} /> View Live
-                  </button>
+                  </button> */}
                   <button className="px-4 py-2 bg-secondary text-secondary-foreground text-sm font-medium rounded-lg flex items-center gap-2 border border-border/50 hover:bg-secondary/80 transition-colors">
-                    <FileText size={14} /> Case Study
+                    <ExternalLink size={14} /> Get Something Similar
                   </button>
                 </div>
               </div>
