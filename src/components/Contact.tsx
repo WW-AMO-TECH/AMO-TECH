@@ -8,15 +8,19 @@ const Contact = () => {
   const formRef = useRef(null);
   const inView = useInView(sectionRef, { once: true, margin: "-100px" });
 
-  const [toast, setToast] = useState({ message: "", type: "" }); // type: "success" | "error"
+  const [toast, setToast] = useState({ message: "", type: "" });
+  const [loading, setLoading] = useState(false); // ✅ added
 
   const showToast = (message, type) => {
     setToast({ message, type });
-    setTimeout(() => setToast({ message: "", type: "" }), 5000); // auto-hide
+    setTimeout(() => setToast({ message: "", type: "" }), 5000);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (loading) return; // ✅ prevent double submit
+    setLoading(true); // ✅ start loading
 
     emailjs
       .sendForm(
@@ -31,11 +35,18 @@ const Contact = () => {
       })
       .catch(() => {
         showToast("❌ Failed to send message. Please try again.", "error");
+      })
+      .finally(() => {
+        setLoading(false); // ✅ stop loading
       });
   };
 
   return (
-    <section id="contact" className="section-padding bg-secondary/30" ref={sectionRef}>
+    <section
+      id="contact"
+      className="section-padding bg-secondary/30 overflow-hidden" // ✅ prevents layout shift
+      ref={sectionRef}
+    >
       <div className="container-narrow">
         {/* Header */}
         <motion.div
@@ -47,13 +58,15 @@ const Contact = () => {
           <p className="text-primary font-mono text-sm font-medium mb-3 tracking-wider uppercase">
             Get in Touch
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Build Something Great</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Let's Build Something Great
+          </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Ready to start your project? Book a free consultation or send me a message.
           </p>
         </motion.div>
 
-        {/* Branded Toast Notification */}
+        {/* Toast */}
         <AnimatePresence>
           {toast.message && (
             <motion.div
@@ -62,45 +75,16 @@ const Contact = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -80, scale: 0.95 }}
               transition={{ duration: 0.25 }}
-              drag="y"
-              dragConstraints={{ top: -120, bottom: 0 }}
-              dragElastic={0.25}
-              whileDrag={{ scale: 0.96 }}
-              onDragEnd={(e, info) => {
-                if (info.offset.y < -50) {
-                  setToast({ message: "", type: "" });
-                }
-              }}
               className="fixed z-50 top-4 left-0 w-full px-4 flex justify-center"
-              style={{
-                paddingTop: "env(safe-area-inset-top)",
-              }}
             >
               <div
-                className={`
-                  w-full max-w-md flex items-center gap-3 px-4 py-3
-                  rounded-2xl backdrop-blur-md shadow-lg
-                  text-white
-                  border md:border-2 border
-                  ${toast.type === "success"
+                className={`w-full max-w-md px-4 py-3 rounded-2xl text-white
+                ${toast.type === "success"
                     ? "bg-[#297BFF]/20 border-[#297BFF]/40"
-                    : "bg-red-500/20 border-red-300/40"}
-                `}
-                style={{
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.12)",
-                }}
+                    : "bg-red-500/20 border-red-300/40"
+                  }`}
               >
-                {/* Icon */}
-                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
-                  <span className="text-sm">
-                    {toast.type === "success" ? "✉️" : "⚠️"}
-                  </span>
-                </div>
-
-                {/* Message */}
-                <p className="text-sm font-medium leading-snug">
-                  {toast.message}
-                </p>
+                {toast.message}
               </div>
             </motion.div>
           )}
@@ -124,9 +108,10 @@ const Contact = () => {
                   name="user_name"
                   required
                   placeholder="Your name"
-                  className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-primary/50"
                 />
               </div>
+
               <div>
                 <label className="text-sm font-medium mb-2 block">Email</label>
                 <input
@@ -134,7 +119,7 @@ const Contact = () => {
                   name="user_email"
                   required
                   placeholder="you@email.com"
-                  className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-primary/50"
                 />
               </div>
             </div>
@@ -143,7 +128,7 @@ const Contact = () => {
               <label className="text-sm font-medium mb-2 block">Project Type</label>
               <select
                 name="project_type"
-                className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+                className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-primary/50"
               >
                 <option value="">Select a project type</option>
                 <option value="business-website">Business Website</option>
@@ -159,7 +144,7 @@ const Contact = () => {
               <label className="text-sm font-medium mb-2 block">Budget</label>
               <select
                 name="budget"
-                className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+                className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-primary/50"
               >
                 <option value="">Select a budget</option>
                 <option value="$1k-$2k">$1,000 - $2,000</option>
@@ -177,15 +162,21 @@ const Contact = () => {
                 required
                 rows={4}
                 placeholder="Tell me about your project..."
-                className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary/50"
+                className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-base resize-none focus:outline-none focus:ring-2 focus:ring-primary/50"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-3.5 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition flex items-center justify-center gap-2"
+              disabled={loading}
+              className={`w-full py-3.5 font-semibold rounded-xl transition flex items-center justify-center gap-2
+                ${loading
+                  ? "bg-primary/60 cursor-not-allowed"
+                  : "bg-primary text-primary-foreground hover:bg-primary/90"
+                }`}
             >
-              <Send size={16} /> Send Message
+              <Send size={16} />
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </motion.form>
 
@@ -208,21 +199,6 @@ const Contact = () => {
                 <p className="text-muted-foreground text-xs">Schedule via Calendly</p>
               </div>
             </a>
-
-
-            {/*     EMAIL ME     */}
-            {/* <a
-              href="mailto:info@amo-tech.com"
-              className="glass-card glow-border p-6 flex items-center gap-4 hover:bg-card/80 transition"
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Mail className="text-primary" size={22} />
-              </div>
-              <div>
-                <p className="font-semibold text-sm">Email Me</p>
-                <p className="text-muted-foreground text-xs">info@amo-tech.com</p>
-              </div>
-            </a> */}
 
             <div className="glass-card p-6 flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
