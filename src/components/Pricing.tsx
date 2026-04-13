@@ -103,7 +103,7 @@ const Pricing = () => {
                 ))}
               </ul>
               <a
-                href="#contact"
+                href="/contact-us"
                 className={`block text-center py-3 rounded-xl font-medium text-sm transition-all ${
                   plan.highlighted
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"

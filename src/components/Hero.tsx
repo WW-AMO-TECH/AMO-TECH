@@ -57,8 +57,9 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-10 text-balance"
         >
-          Performance-driven, conversion-focused websites and web apps that help businesses
-          automate, scale, and stand out. Trusted by clients worldwide.
+          We build performance-driven websites and web apps for individuals and companies — 
+          turning your site into a lead-generating, booking machine that helps you automate, scale, 
+          and stand out. Trusted by clients worldwide.
         </motion.p>
 
         <motion.div
@@ -68,7 +69,7 @@ const Hero = () => {
           className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4"
         >
           <a
-            href="#contact"
+            href="/contact-us"
             className="px-5 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all duration-200 flex items-center justify-center gap-2 group text-sm sm:text-base"
           >
             Book a Free Consultation

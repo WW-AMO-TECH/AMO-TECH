@@ -10,19 +10,19 @@ import {
 const faqs = [
   {
     question: "How long does it take to build a website?",
-    answer: "Typical timelines range from 2-4 weeks for a standard business website to 6-12 weeks for complex web applications. I'll provide a detailed timeline during our discovery call based on your specific requirements.",
+    answer: "Typical timelines range from 1-2 weeks for a standard business website to 4-10 weeks for complex web applications. We'll provide a detailed timeline during our discovery call based on your specific requirements.",
   },
   {
-    question: "What is included in the monthly subscription?",
+    question: "What is included in the one-time payment?",
     answer: "Each plan includes hosting, SSL certificate, regular security updates, performance monitoring, content updates, and technical support. Higher tiers include additional features like analytics dashboards and priority support.",
   },
   {
     question: "Do you offer custom pricing for larger projects?",
-    answer: "Absolutely. For enterprise-level projects or unique requirements, I provide custom quotes based on scope, complexity, and timeline. Book a free consultation to discuss your needs.",
+    answer: "Absolutely. For enterprise-level projects or unique requirements, We provide custom quotes based on scope, complexity, and timeline. Book a free consultation to discuss your needs.",
   },
   {
     question: "Do you handle hosting and domain setup?",
-    answer: "Yes, I handle the complete setup including domain configuration, hosting, SSL, email setup, and DNS management. Everything is included in the monthly plan so you don't have to worry about technical details.",
+    answer: "Yes, we handle the complete setup including domain configuration, hosting, SSL, email setup, and DNS management. Everything is included in the monthly plan so you don't have to worry about technical details.",
   },
   {
     question: "What happens if I want to cancel or make changes?",

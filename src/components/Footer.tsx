@@ -2,7 +2,7 @@ import { Github, Linkedin, Twitter, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border/50 py-12 px-4 md:px-8">
+    <footer className="border-t border-border/50 py-8 pb-4 px-4 md:px-8">
       <div className="container-narrow">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           <div>
@@ -40,10 +40,10 @@ const Footer = () => {
             <h4 className="font-semibold text-sm mb-4">Connect</h4>
             <div className="flex gap-3">
               {[
-                { icon: Twitter, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Github, href: "#" },
-                { icon: Instagram, href: "#" },
+                { icon: Twitter, href: "/contact-us" },
+                { icon: Linkedin, href: "/contact-us" },
+                { icon: Github, href: "/contact-us" },
+                { icon: Instagram, href: "/contact-us" },
               ].map(({ icon: Icon, href }, i) => (
                 <a
                   key={i}
@@ -59,8 +59,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border/50 pt-8 text-center text-muted-foreground text-xs">
-          © {new Date().getFullYear()} Amo-Tech Agency. All rights reserved.
+        <div className="border-t border-border/50 pt-4 text-center text-muted-foreground text-xs">
+          © {new Date().getFullYear()} Amo-Tech . All rights reserved.
         </div>
       </div>
     </footer>

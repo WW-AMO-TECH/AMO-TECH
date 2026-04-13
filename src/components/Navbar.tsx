@@ -8,13 +8,13 @@ const navLinks = [
   { label: "Process", href: "#process" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -53,13 +53,13 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <button
+          {/* <button
             onClick={() => setIsDark(!isDark)}
             className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-surface transition-colors"
             aria-label="Toggle theme"
           >
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
+          </button> */}
           <a
             href="#contact"
             className="px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
@@ -106,13 +106,13 @@ const Navbar = () => {
                 >
                   Book a Call
                 </a>
-                <button
+                {/* <button
                   onClick={() => setIsDark(!isDark)}
                   className="ml-3 p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-surface transition-colors"
                   aria-label="Toggle theme"
                 >
                   {isDark ? <Sun size={18} /> : <Moon size={18} />}
-                </button>
+                </button> */}
               </div>
             </div>
           </motion.div>

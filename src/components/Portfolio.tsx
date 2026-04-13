@@ -87,9 +87,9 @@ const Portfolio = () => {
                   {/* <button className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg flex items-center gap-2 hover:bg-primary/90 transition-colors">
                     <ExternalLink size={14} /> View Live
                   </button> */}
-                  <button className="px-4 py-2 bg-secondary text-secondary-foreground text-sm font-medium rounded-lg flex items-center gap-2 border border-border/50 hover:bg-secondary/80 transition-colors">
+                  <a href="/contact-us" className="px-4 py-2 bg-secondary text-secondary-foreground text-sm font-medium rounded-lg flex items-center gap-2 border border-border/50 hover:bg-secondary/80 transition-colors">
                     <ExternalLink size={14} /> Get Something Similar
-                  </button>
+                  </a>
                 </div>
               </div>
               <div className="p-6">

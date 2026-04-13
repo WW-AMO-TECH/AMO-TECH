@@ -16,7 +16,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "Emily Chen",
+    name: "Robert Langley",
     role: "Marketing Director, GrowthLab",
     quote: "Professional, responsive, and incredibly skilled. They redesigned our entire web presence and delivered ahead of schedule. A true partner.",
     rating: 5,
