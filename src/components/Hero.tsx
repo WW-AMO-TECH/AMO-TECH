@@ -55,7 +55,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-10 text-balance"
+          className="text-xl font-semibold sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-10 text-balance"
         >
           We build performance-driven websites and web apps for individuals and companies — 
           turning your site into a lead-generating, booking machine that helps you automate, scale, 
