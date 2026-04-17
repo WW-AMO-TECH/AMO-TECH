@@ -46,6 +46,7 @@ const ContactPage = () => {
 
     const templateParams = {
       name: formData.name,
+      phone_number: formData.phoneNumber,
       email: formData.email,
       project_type: formData.projectType,
       budget: `$${formData.budget[0]} - $${formData.budget[1]}`,
@@ -189,7 +190,11 @@ const ContactPage = () => {
                     <input
                       type="tel"
                       value={phone}
-                      onChange={(e) => setPhone(formatPhone(e.target.value))}
+                      onChange={(e) => {
+                        const formatted = formatPhone(e.target.value);
+                        setPhone(formatted);
+                        setFormData({ ...formData, phoneNumber: formatted });
+                      }}
                       placeholder="(123) 456-7890"
                       className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                     />
@@ -210,15 +215,17 @@ const ContactPage = () => {
                     <label className="text-sm font-medium mb-2 block">Project Type</label>
                     <select
                       name="project_type"
+                      value={formData.projectType}
+                      onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                       className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-primary/50"
                     >
                       <option value="">Select a project type</option>
-                      <option value="business-website">Business Website</option>
-                      <option value="booking-system">Booking System</option>
-                      <option value="web-app">Web App</option>
-                      <option value="e-commerce">E-Commerce</option>
-                      <option value="redesign">Redesign</option>
-                      <option value="other">Other</option>
+                      <option value="Business-Website">Business Website</option>
+                      <option value="Booking-System">Booking System</option>
+                      <option value="Web-App">Web App</option>
+                      <option value="E-Commerce">E-Commerce</option>
+                      <option value="Redesign">Redesign</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
 
@@ -226,14 +233,31 @@ const ContactPage = () => {
                     <label className="text-sm font-medium mb-2 block">Budget</label>
                     <select
                       name="budget"
+                      value={`${formData.budget[0]}-${formData.budget[1]}`}
+                      onChange={(e) => {
+                        const val = e.target.value;
+
+                        const map: Record<string, [number, number]> = {
+                          "1000-2000": [1000, 2000],
+                          "2000-5000": [2000, 5000],
+                          "5000-10000": [5000, 10000],
+                          "10000-25000": [10000, 25000],
+                          "25000-50000": [25000, 50000],
+                        };
+
+                        setFormData({
+                          ...formData,
+                          budget: map[val] || [1000, 5000],
+                        });
+                      }}
                       className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-primary/50"
                     >
                       <option value="">Select a budget</option>
-                      <option value="$1k-$2k">$1,000 - $2,000</option>
-                      <option value="$2k-$5k">$2,000 - $5,000</option>
-                      <option value="$5k-$10k">$5,000 - $10,000</option>
-                      <option value="$10k-$25k">$10,000 - $25,000</option>
-                      <option value="over-$25k">Over $25,000</option>
+                      <option value="1000-2000">$1,000 - $2,000</option>
+                      <option value="2000-5000">$2,000 - $5,000</option>
+                      <option value="5000-10000">$5,000 - $10,000</option>
+                      <option value="10000-25000">$10,000 - $25,000</option>
+                      <option value="25000-50000">Over $25,000</option>
                     </select>
                   </div>
 
@@ -243,6 +267,8 @@ const ContactPage = () => {
                       name="message"
                       required
                       rows={4}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell me about your project..."
                       className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-base resize-none focus:outline-none focus:ring-2 focus:ring-primary/50"
                     />
