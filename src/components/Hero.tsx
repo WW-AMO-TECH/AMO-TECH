@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Laptop, Smartphone, Code2, Terminal, Braces, GitBranch, Database, Cpu, Cloud, Monitor } from "lucide-react";
 import { techIcons } from "./TechIcons";
 
 const stacks = [
@@ -27,6 +27,36 @@ const Hero = () => {
         />
       </div>
 
+      {/* Floating tech icons */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[
+          { Icon: Laptop, x: "8%", y: "18%", size: 36, dur: 9, delay: 0 },
+          { Icon: Smartphone, x: "85%", y: "22%", size: 28, dur: 11, delay: 1.2 },
+          { Icon: Code2, x: "15%", y: "70%", size: 32, dur: 10, delay: 0.4 },
+          { Icon: Terminal, x: "78%", y: "75%", size: 30, dur: 12, delay: 2 },
+          { Icon: Braces, x: "92%", y: "55%", size: 26, dur: 8, delay: 0.8 },
+          { Icon: GitBranch, x: "5%", y: "45%", size: 28, dur: 13, delay: 1.6 },
+          { Icon: Database, x: "50%", y: "8%", size: 26, dur: 10, delay: 2.4 },
+          { Icon: Cpu, x: "45%", y: "92%", size: 28, dur: 11, delay: 0.6 },
+          { Icon: Cloud, x: "70%", y: "12%", size: 30, dur: 9, delay: 1.8 },
+          { Icon: Monitor, x: "25%", y: "30%", size: 32, dur: 12, delay: 1 },
+        ].map(({ Icon, x, y, size, dur, delay }, i) => (
+          <motion.div
+            key={i}
+            className="absolute text-primary/50 drop-shadow-[0_0_12px_hsl(var(--primary)/0.4)]"
+            style={{ left: x, top: y }}
+            animate={{
+              y: [0, -25, 0, 15, 0],
+              x: [0, 15, 0, -10, 0],
+              rotate: [0, 8, -5, 3, 0],
+            }}
+            transition={{ duration: dur, delay, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Icon size={size} strokeWidth={2.2} />
+          </motion.div>
+        ))}
+      </div>
+
       <div className="container-narrow relative z-10 text-center w-full max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -43,23 +73,21 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-[1.75rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-7xl font-extrabold sm:leading-[1.1] tracking-tight mb-4 sm:mb-6 text-balance"
+          className="text-[1.75rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold sm:leading-[1.1] tracking-tight mb-4 sm:mb-6 text-balance"
         >
-          We Build Modern Websites
+          Turn your Roofing Website Into
           <br className="hidden sm:block" />
           <span className="sm:hidden"> </span>
-          <span className="gradient-text">& Scalable Web Apps</span>
+          <span className="gradient-text">A Lead & Booking Machine</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl font-semibold sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-10 text-balance"
+          className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-10 text-balance"
         >
-          We build performance-driven websites and web apps for individuals and companies — 
-          turning your site into a lead-generating, booking machine that helps you automate, scale, 
-          and stand out. Trusted by clients worldwide.
+          We build performance-driven websites and web apps for individuals and companies — turning your site into a lead-generating, booking machine that helps you automate, scale, and stand out. Trusted by clients worldwide.
         </motion.p>
 
         <motion.div
@@ -69,7 +97,7 @@ const Hero = () => {
           className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4"
         >
           <a
-            href="/contact-us"
+            href="/contact"
             className="px-5 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all duration-200 flex items-center justify-center gap-2 group text-sm sm:text-base"
           >
             Book a Free Consultation

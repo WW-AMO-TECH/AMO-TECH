@@ -40,10 +40,10 @@ const Footer = () => {
             <h4 className="font-semibold text-sm mb-4">Connect</h4>
             <div className="flex gap-3">
               {[
-                { icon: Twitter, href: "/contact-us" },
-                { icon: Linkedin, href: "/contact-us" },
-                { icon: Github, href: "/contact-us" },
-                { icon: Instagram, href: "/contact-us" },
+                { icon: Twitter, href: "/contact" },
+                { icon: Linkedin, href: "/contact" },
+                { icon: Github, href: "/contact" },
+                { icon: Instagram, href: "/contact" },
               ].map(({ icon: Icon, href }, i) => (
                 <a
                   key={i}
