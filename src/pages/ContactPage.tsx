@@ -92,7 +92,7 @@ const ContactPage = () => {
       <Navbar />
 
       {/* Page Header */}
-      <section className="pt-28 pb-12 px-4 md:px-8">
+      <section className="pt-20 pb-12 px-4 md:px-8">
         <div className="container-narrow text-center">
           <motion.div
             initial={{ opacity: 0, x: -10 }}

@@ -126,14 +126,14 @@ const Navbar = () => {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.2 }}
                   onClick={() => setMobileOpen(false)}
-                  className="md:hidden fixed inset-0 bg-background/50 backdrop-blur-md z-[100]"
+                  className="md:hidden fixed inset-x-0 bottom-0 top-14 bg-background/50 backdrop-blur-md z-[100]"
                 />
                 <motion.aside
                   initial={{ x: "100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: "100%" }}
                   transition={{ type: "tween", duration: 0.25 }}
-                  className="md:hidden fixed top-0 right-0 bottom-0 w-64 max-w-[80vw] bg-background border-l border-border/50 z-[110] flex flex-col p-4 gap-1 pt-20"
+                  className="md:hidden fixed top-14 right-3 w-56 max-w-[75vw] max-h-[70vh] overflow-y-auto rounded-2xl bg-background border border-border/50 shadow-xl z-[110] flex flex-col p-1 gap-1"
                 >
                   {navLinks.map((link) => (
                     <a
