@@ -256,8 +256,7 @@ const ContactPage = () => {
                       <option value="1000-2000">$1,000 - $2,000</option>
                       <option value="2000-5000">$2,000 - $5,000</option>
                       <option value="5000-10000">$5,000 - $10,000</option>
-                      <option value="10000-25000">$10,000 - $25,000</option>
-                      <option value="25000-50000">Over $25,000</option>
+                      <option value="10000-50000">Over $10,000</option>
                     </select>
                   </div>
 
