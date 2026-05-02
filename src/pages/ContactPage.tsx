@@ -94,7 +94,7 @@ const ContactPage = () => {
       {/* Page Header */}
       <section className="pt-20 pb-12 px-4 md:px-8">
         <div className="container-narrow text-center">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
@@ -107,12 +107,12 @@ const ContactPage = () => {
               <ArrowLeft size={16} />
               Back to Home
             </Link>
-          </motion.div>
+          </motion.div> */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="text-primary font-mono text-2xl font-medium mb-3 tracking-wider uppercase"
+            className="text-primary font-mono text-5xl font-medium mb-3 tracking-wider uppercase"
           >
             Contact Us
           </motion.p>
@@ -157,7 +157,7 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form + Sidebar */}
-      <section className="section-padding bg-secondary/30">
+      <section className="section-padding py-12 bg-secondary/30">
         <div className="container-narrow">
           <div className="grid lg:grid-cols-5 gap-10">
             {/* Form */}
@@ -166,7 +166,7 @@ const ContactPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               onSubmit={handleSubmit}
-              className="lg:col-span-3 glass-card p-8 glow-border space-y-5"
+              className="lg:col-span-3 glass-card p-8 border-1 border-primary glow-border space-y-5"
             >
               <fieldset disabled={loading} className="space-y-5">
 

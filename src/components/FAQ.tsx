@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: "Do you handle hosting and domain setup?",
-    answer: "Yes, we handle the complete setup including domain configuration, hosting, SSL, email setup, and DNS management. Everything is included in the monthly plan so you don't have to worry about technical details.",
+    answer: "Yes, we handle the complete setup including domain configuration, hosting, SSL, email setup, and DNS management. Everything is included in the payment plan so you don't have to worry about technical details.",
   },
   {
     question: "What happens if I want to cancel or make changes?",

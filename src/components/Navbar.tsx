@@ -4,21 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 
 const navLinks = [
-  { label: "Services", href: "/#services" },
-  { label: "Portfolio", href: "/#portfolio" },
-  { label: "Process", href: "/#process" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Contact", href: "/contact" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isDark, setIsDark] = useState<boolean>(() => {
+  const [isLight, setIsLight] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
     const stored = localStorage.getItem("theme");
-    if (stored) return stored === "dark";
+    if (stored) return stored === "light";
     return !document.documentElement.classList.contains("light");
   });
 
@@ -33,13 +29,13 @@ const Navbar = () => {
 
   // Apply theme + persist + sync across tabs/pages
   useEffect(() => {
-    document.documentElement.classList.toggle("light", !isDark);
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  }, [isDark]);
+    document.documentElement.classList.toggle("light", isLight);
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  }, [isLight]);
 
   useEffect(() => {
     const onStorage = (e: StorageEvent) => {
-      if (e.key === "theme" && e.newValue) setIsDark(e.newValue === "dark");
+      if (e.key === "theme" && e.newValue) setIsLight(e.newValue === "light");
     };
     window.addEventListener("storage", onStorage);
     return () => window.removeEventListener("storage", onStorage);
@@ -81,14 +77,14 @@ const Navbar = () => {
             </a>
           ))}
           <button
-            onClick={() => setIsDark(!isDark)}
+            onClick={() => setIsLight(!isLight)}
             className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
             aria-label="Toggle theme"
           >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            {isLight ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <a
-            href="/contact"
+            href="/contact-us"
             className="px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
           >
             Book a Call
@@ -98,11 +94,11 @@ const Navbar = () => {
         {/* Mobile actions */}
         <div className="md:hidden flex items-center gap-1">
           <button
-            onClick={() => setIsDark(!isDark)}
+            onClick={() => setIsLight(!isLight)}
             className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 active:bg-muted transition-colors"
             aria-label="Toggle theme"
           >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            {isLight ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -133,7 +129,7 @@ const Navbar = () => {
                   animate={{ x: 0 }}
                   exit={{ x: "100%" }}
                   transition={{ type: "tween", duration: 0.25 }}
-                  className="md:hidden fixed top-14 right-3 w-56 max-w-[75vw] max-h-[70vh] overflow-y-auto rounded-2xl bg-background border border-border/50 shadow-xl z-[110] flex flex-col p-1 gap-1"
+                  className="md:hidden fixed top-14 mt-2 right-3 w-56 max-w-[75vw] max-h-[70vh] overflow-y-auto rounded-xl bg-background border border-border/50 shadow-xl z-[110] flex flex-col p-1 gap-1"
                 >
                   {navLinks.map((link) => (
                     <a
@@ -146,7 +142,7 @@ const Navbar = () => {
                     </a>
                   ))}
                   <a
-                    href="/contact"
+                    href="/contact-us"
                     onClick={() => setMobileOpen(false)}
                     className="mt-3 px-4 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-lg text-center hover:bg-primary/90 active:bg-primary/80 transition-colors"
                   >

@@ -57,7 +57,7 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="container-narrow relative z-10 text-center w-full max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="container-narrow relative z-10 text-center w-full max-w-6xl mx-auto px-4 pt-12 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,40 +75,40 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-[1.75rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold sm:leading-[1.1] tracking-tight mb-4 sm:mb-6 text-balance"
         >
-          Turn your Roofing Website Into
+          Get More Roofing Jobs
           <br className="hidden sm:block" />
           <span className="sm:hidden"> </span>
-          <span className="gradient-text">A Lead & Booking Machine</span>
+          <span className="gradient-text">With A Website That Turns Visitors Into Customers.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-10 text-balance"
+          className="text-sm sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-4 text-balance"
         >
-          We build performance-driven websites and web apps for individuals and companies, turning your site into a lead-generating, booking machine that helps you automate, scale, and stand out. Trusted by clients worldwide.
+          We help roofing companies stop losing potential customers online and start getting more calls, quote requests, and booked jobs with high-converting websites built to turn visitors into paying clients.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4"
+          className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pb-4"
         >
           <a
-            href="/contact"
+            href="/contact-us"
             className="px-5 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all duration-200 flex items-center justify-center gap-2 group text-sm sm:text-base"
           >
             Book a Free Consultation
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
           <a
-            href="#portfolio"
+            href="/about-us"
             className="px-5 sm:px-8 py-3 sm:py-4 bg-secondary text-secondary-foreground font-semibold rounded-xl hover:bg-secondary/80 transition-all duration-200 flex items-center justify-center gap-2 border border-border/50 text-sm sm:text-base"
           >
             <Play size={16} />
-            View Our Work
+            View Our Projects
           </a>
         </motion.div>
 
@@ -117,7 +117,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-8 sm:mt-16 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+          className="mt-8 sm:mt-6 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
         >
           <div className="flex animate-marquee whitespace-nowrap gap-3 sm:gap-8 text-muted-foreground/70 text-[0.7rem] sm:text-sm">
             {[...stacks, ...stacks].map((stack, i) => (

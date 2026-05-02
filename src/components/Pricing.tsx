@@ -56,7 +56,7 @@ const Pricing = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="pricing" className="section-padding bg-secondary/30" ref={ref}>
+    <section id="pricing" className="section-padding py-16 bg-secondary/30" ref={ref}>
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ const Pricing = () => {
                 ))}
               </ul>
               <a
-                href="/contact"
+                href="/contact-us"
                 className={`block text-center py-3 rounded-xl font-medium text-sm transition-all ${
                   plan.highlighted
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
