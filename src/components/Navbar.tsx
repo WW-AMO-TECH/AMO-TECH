@@ -5,7 +5,7 @@ import { Menu, X, Sun, Moon } from "lucide-react";
 
 const navLinks = [
   // { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact-us" },
+  // { label: "Contact", href: "/contact-us" },
 ];
 
 const Navbar = () => {
@@ -84,10 +84,10 @@ const Navbar = () => {
             {isLight ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <a
-            href="#book"
+            href="/contact-us"
             className="px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
           >
-            Book a Call
+            Contact
           </a>
         </div>
 
@@ -142,11 +142,11 @@ const Navbar = () => {
                     </a>
                   ))}
                   <a
-                    href="#book"
+                    href="/contact-us"
                     onClick={() => setMobileOpen(false)}
-                    className="mt-3 px-4 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-lg text-center hover:bg-primary/90 active:bg-primary/80 transition-colors"
+                    className="px-4 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-lg text-center hover:bg-primary/90 active:bg-primary/80 transition-colors"
                   >
-                    Book a Call
+                    Contact Us
                   </a>
                 </motion.aside>
               </>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Phone } from "lucide-react";
 import { techIcons } from "./TechIcons";
-import portrait from "@/assets/founder-portrait.jpg";
+import portrait from "@/assets/founder-portrait.jpeg";
 
 const stacks = [
   "React", "Node.js", "TypeScript", "Next.js", "WordPress", "Tailwind CSS",
@@ -153,10 +153,10 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs text-muted-foreground"
+              className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs text-muted-foreground font-semibold"
             >
               <span className="flex items-center gap-1.5">⚡ Live in 7 days</span>
-              <span className="flex items-center gap-1.5"><ShieldCheck size={14} className="text-[hsl(var(--success))]" /> Full refund in 30 days</span>
+              <span className="flex items-center font-bold gap-1.5"><ShieldCheck size={14} className="text-[hsl(var(--success))]" /> Full refund in 30 days</span>
               <span className="flex items-center gap-1.5">🛡 100+ roofers helped</span>
             </motion.div>
           </div>

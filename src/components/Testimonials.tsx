@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import MikeD from "@/assets/Mike-Dean.jpeg";
 import TonyM from "@/assets/Tony-Miller.jpeg";
-import CarlaR from "@/assets/Carla-Reyes.png";
+import CarlaR from "@/assets/Carla-Reyes.jpeg";
 
 const testimonials = [
   {
