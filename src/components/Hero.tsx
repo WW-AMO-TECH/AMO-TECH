@@ -38,7 +38,7 @@ const Hero = () => {
         >
           <div className="inline-flex items-center gap-2 lg:px-4 px-3 py-2 rounded-full bg-red-600 text-white text-xs sm:text-sm font-bold uppercase tracking-wide shadow-[0_0_24px_hsl(0_84%_60%/0.5)]">
             <ShieldCheck size={16} />
-            Roofers: 40+ Booked Jobs/Month Guaranteed
+            Roofers: 20+ Booked Jobs/Month Guaranteed
           </div>
         </motion.div>
 
@@ -97,7 +97,7 @@ const Hero = () => {
                 <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-[hsl(var(--success))]/15 flex items-center justify-center text-[hsl(var(--success))] font-bold text-xs sm:text-sm">+</div>
                 <div className="text-left">
                   <div className="text-[9px] sm:text-[10px] uppercase tracking-wider text-muted-foreground leading-none">Booked</div>
-                  <div className="text-xs sm:text-sm font-bold leading-tight">47/mo avg</div>
+                  <div className="text-xs sm:text-sm font-bold leading-tight">20/mo avg</div>
                 </div>
               </motion.div>
             </div>
@@ -121,7 +121,7 @@ const Hero = () => {
               className="text-[1.75rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 sm:mb-5 text-balance"
             >
               I Get Roofers{" "}
-              <span className="gradient-text block sm:inline mt-1 sm:mt-0">47 Booked Jobs/Month</span>{" "}
+              <span className="gradient-text block sm:inline mt-1 sm:mt-0">20 Booked Jobs/Month</span>{" "}
               <span className="block sm:inline">on Average</span>
             </motion.h1>
 
@@ -157,7 +157,7 @@ const Hero = () => {
             >
               <span className="flex items-center gap-1.5">⚡ Live in 7 days</span>
               <span className="flex items-center font-bold gap-1.5"><ShieldCheck size={14} className="text-[hsl(var(--success))]" /> Full refund in 30 days</span>
-              <span className="flex items-center gap-1.5">🛡 100+ roofers helped</span>
+              <span className="flex items-center gap-1.5">🛡 50+ roofers helped</span>
             </motion.div>
           </div>
         </div>

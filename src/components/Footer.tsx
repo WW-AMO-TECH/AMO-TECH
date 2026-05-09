@@ -56,7 +56,7 @@ const Footer = () => {
 
         <div className="border-t border-border/50 pt-8 space-y-4">
           <div className="text-center">
-            <p className="text-sm font-semibold mb-3">Trusted by 100+ Roofing Contractors</p>
+            <p className="text-sm font-semibold mb-3">Trusted by 50+ Roofing Contractors</p>
             <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
               {["GAF Certified", "Owens Corning Preferred", "BBB A+", "CertainTeed", "HAAG Certified"].map((badge) => (
                 <span key={badge} className="px-3 py-1 rounded-md bg-muted/50 border border-border/50 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">

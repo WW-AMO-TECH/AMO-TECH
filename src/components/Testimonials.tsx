@@ -20,7 +20,7 @@ const testimonials = [
     location: "Dallas, TX",
     badge: "GAF Certified",
     badge2: "BBB A+ Rated",
-    quote: "In just 30 days, we went from 0 to 47 booked jobs. The increase in demand has been huge, we’re now in a much stronger position as a business.",
+    quote: "In just 30 days, we went from 7 to 15 booked jobs. The increase in demand has been huge, we’re now in a much stronger position as a business.",
     rating: 5,
     initials: "TM",
     screenshot: TonyM,

@@ -43,14 +43,14 @@ const CTA = () => {
             {/* Stats */}
             <div className="mt-10 grid w-full max-w-3xl grid-cols-1 gap-4 md:grid-cols-3">
               <div className="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur-md">
-                <h3 className="text-3xl font-bold text-white">47+</h3>
+                <h3 className="text-3xl font-bold text-white">20+</h3>
                 <p className="mt-1 text-sm text-blue-100">
                   Jobs booked in 30 days
                 </p>
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur-md">
-                <h3 className="text-3xl font-bold text-white">4.9★</h3>
+                <h3 className="text-3xl font-bold text-white">4.9 ★</h3>
                 <p className="mt-1 text-sm text-blue-100">
                   Trusted customer experience
                 </p>
