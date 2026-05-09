@@ -43,14 +43,14 @@ const StickyCTA = () => {
                 Free strategy call · No commitment
               </p>
             </div>
-            <Link
-              to="/contact-us"
+            <a
+              href="#book"
               className="inline-flex items-center gap-1.5 px-3 md:px-4 py-2 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors text-sm whitespace-nowrap"
             >
               <Phone size={14} className="hidden sm:inline" />
-              Book Call
+              Get A Free 5-Min Audit
               <ArrowRight size={14} />
-            </Link>
+            </a>
             <button
               onClick={() => setDismissed(true)}
               aria-label="Dismiss"

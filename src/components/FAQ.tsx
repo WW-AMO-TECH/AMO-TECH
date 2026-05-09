@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: "Do you handle hosting and domain setup?",
-    answer: "Yes, we handle the complete setup including domain configuration, hosting, SSL, email setup, and DNS management. Everything is included in the payment plan so you don't have to worry about technical details.",
+    answer: "Yes, we handle the complete setup including domain configuration, hosting, SSL, email setup, and DNS management. Everything is included in the payment so you don't have to worry about technical details.",
   },
   {
     question: "What happens if I want to cancel or make changes?",
@@ -35,7 +35,7 @@ const FAQ = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="faq" className="section-padding" ref={ref}>
+    <section id="faq" className="section-padding py-14" ref={ref}>
       <div className="container-narrow max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

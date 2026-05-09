@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const highlights = [
   { icon: Clock, title: "24h Response Time", desc: "We reply to every inquiry within one business day." },
-  { icon: Globe, title: "Available Worldwide", desc: "Remote-first workflow — no matter your timezone." },
+  { icon: Globe, title: "Available Worldwide", desc: "Remote-first workflow no matter your timezone." },
   { icon: Shield, title: "NDA on Request", desc: "Your ideas stay confidential from day one." },
   { icon: Zap, title: "Fast Turnaround", desc: "Most projects kick off within a week of signing." },
 ];
@@ -135,29 +135,8 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Highlights */}
-      <section className="pb-10 px-4 md:px-8">
-        <div className="container-narrow grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {highlights.map((h, i) => (
-            <motion.div
-              key={h.title}
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.12 + i * 0.06 }}
-              className="glass-card p-5 text-center"
-            >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                <h.icon className="text-primary" size={20} />
-              </div>
-              <p className="font-semibold text-sm mb-1">{h.title}</p>
-              <p className="text-muted-foreground text-xs leading-relaxed">{h.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
       {/* Contact Form + Sidebar */}
-      <section className="section-padding py-12 bg-secondary/30">
+      <section className="section-padding py-4 lg:py-12 bg-secondary/30">
         <div className="container-narrow">
           <div className="grid lg:grid-cols-5 gap-10">
             {/* Form */}
@@ -292,29 +271,50 @@ const ContactPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="lg:col-span-2 space-y-5"
+              className="lg:col-span-2 space-y-7"
             >
-              <a
-                href="https://calendly.com/brightrichmond/consultation"
-                className="glass-card glow-border p-6 flex items-center gap-4 hover:bg-card/80 transition"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Calendar className="text-primary" size={22} />
+              <div>
+                <a
+                  href="https://calendly.com/brightrichmond/consultation"
+                  className="glass-card glow-border p-6 flex items-center gap-4 hover:bg-card/80 transition"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Calendar className="text-primary" size={22} />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm">Book a Call</p>
+                    <p className="text-muted-foreground text-xs">Schedule via Calendly</p>
+                  </div>
+                </a>
+                
+                <div className="glass-card p-6 mt-4 flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <MapPin className="text-primary" size={22} />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm">Available Globally</p>
+                    <p className="text-muted-foreground text-xs">Remote-first, worldwide clients</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-semibold text-sm">Book a Call</p>
-                  <p className="text-muted-foreground text-xs">Schedule via Calendly</p>
-                </div>
-              </a>
-              
-              <div className="glass-card p-6 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <MapPin className="text-primary" size={22} />
-                </div>
-                <div>
-                  <p className="font-semibold text-sm">Available Globally</p>
-                  <p className="text-muted-foreground text-xs">Remote-first, worldwide clients</p>
-                </div>
+              </div>
+
+              {/* Highlights */}
+              <div className="container-narrow grid sm:grid-cols-2 lg:grid-cols-2 gap-4">
+                {highlights.map((h, i) => (
+                  <motion.div
+                    key={h.title}
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.12 + i * 0.06 }}
+                    className="glass-card p-5 text-center border-1 border-primary"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                      <h.icon className="text-primary" size={20} />
+                    </div>
+                    <p className="font-semibold text-sm mb-1">{h.title}</p>
+                    <p className="text-muted-foreground text-xs leading-relaxed">{h.desc}</p>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>

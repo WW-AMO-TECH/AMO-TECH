@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 
 const navLinks = [
-  { label: "About Us", href: "/about-us" },
+  // { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact-us" },
 ];
 
@@ -84,7 +84,7 @@ const Navbar = () => {
             {isLight ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <a
-            href="/contact-us"
+            href="#book"
             className="px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
           >
             Book a Call
@@ -142,7 +142,7 @@ const Navbar = () => {
                     </a>
                   ))}
                   <a
-                    href="/contact-us"
+                    href="#book"
                     onClick={() => setMobileOpen(false)}
                     className="mt-3 px-4 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-lg text-center hover:bg-primary/90 active:bg-primary/80 transition-colors"
                   >
