@@ -163,7 +163,7 @@ const ContactPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               onSubmit={handleSubmit}
-              className="lg:col-span-3 glass-card p-8 border-1 border-primary glow-border space-y-5"
+              className="lg:col-span-3 glass-card p-8 border-2 border-primary glow-border space-y-5"
             >
               <fieldset disabled={loading} className="space-y-5">
 

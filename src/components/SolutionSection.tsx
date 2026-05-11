@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Check, Sparkles } from "lucide-react";
 
 const bullets = [
-  "Turn website visitors into real calls.",
-  "Get you get more quote requests.",
+  "Turn your website visitors into real calls.",
+  "Get more quote requests.",
   "Stand out from other roofing companies.",
   "Increase your online visibility.",
   "Boost your local search rankings.",

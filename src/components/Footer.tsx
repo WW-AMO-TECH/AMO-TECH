@@ -15,7 +15,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-smcon mb-4">Quick Links</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
               <li><a href="/contact-us" className="hover:text-foreground transition-colors">Contact</a></li>
             </ul>

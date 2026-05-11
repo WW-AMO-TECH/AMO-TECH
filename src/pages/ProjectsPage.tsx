@@ -97,7 +97,7 @@ const Projects = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card aspect-[4/3]"
+                className="group relative overflow-hidden rounded-2xl border-2 border-primary bg-card aspect-[4/3]"
               >
                 {item.type === "image" ? (
                   <img
