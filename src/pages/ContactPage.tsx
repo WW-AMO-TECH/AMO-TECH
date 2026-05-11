@@ -1,7 +1,6 @@
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import emailjs from "emailjs-com";
 import { useToast } from "@/components/ui/use-toast";
 import { Clock, Globe, Shield, Zap, Send, MessageCircle, Calendar, Mail, MapPin, ArrowLeft } from "lucide-react";
@@ -18,6 +17,26 @@ const ContactPage = () => {
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
   const [phone, setPhone] = useState("");
+  const [isLight, setIsLight] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false;
+    const stored = localStorage.getItem("theme");
+    if (stored) return stored === "light";
+    return !document.documentElement.classList.contains("light");
+  });
+
+  // Apply theme + persist + sync across tabs/pages
+  useEffect(() => {
+    document.documentElement.classList.toggle("light", isLight);
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  }, [isLight]);
+
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === "theme" && e.newValue) setIsLight(e.newValue === "light");
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -89,25 +108,24 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
 
       {/* Page Header */}
-      <section className="pt-20 pb-12 px-4 md:px-8">
+      <section className="pt-6 pb-12 px-4 md:px-8">
         <div className="container-narrow text-center">
-          {/* <motion.div
+          <motion.div
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
             className="flex justify-start mb-6"
           >
-            <Link
-              to="/"
+            <button
+              onClick={() => window.history.back()}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground bg-muted/50 hover:bg-muted border border-border/50 transition-colors"
             >
               <ArrowLeft size={16} />
               Back to Home
-            </Link>
-          </motion.div> */}
+            </button>
+          </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -220,7 +238,6 @@ const ContactPage = () => {
                           "1000-2000": [1000, 2000],
                           "2000-5000": [2000, 5000],
                           "5000-10000": [5000, 10000],
-                          "10000-50000": [10000, 50000],
                         };
 
                         setFormData({
@@ -233,8 +250,7 @@ const ContactPage = () => {
                       <option value="">Select a budget</option>
                       <option value="1000-2000">$1,000 - $2,000</option>
                       <option value="2000-5000">$2,000 - $5,000</option>
-                      <option value="5000-10000">$5,000 - $10,000</option>
-                      <option value="10000-50000">Over $10,000</option>
+                      <option value="5000-10000">Over $5,000</option>
                     </select>
                   </div>
 

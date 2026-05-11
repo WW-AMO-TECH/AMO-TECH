@@ -54,7 +54,7 @@ const RoofingTestimonials = () => {
   );
 
   return (
-    <section className="section-padding bg-secondary/30">
+    <section id="testimonials" className="section-padding bg-secondary/30">
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

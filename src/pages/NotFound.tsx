@@ -1,10 +1,30 @@
 import { useLocation, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Compass, Home, Mail } from "lucide-react";
 
 const NotFound = () => {
   const location = useLocation();
+  const [isLight, setIsLight] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false;
+    const stored = localStorage.getItem("theme");
+    if (stored) return stored === "light";
+    return !document.documentElement.classList.contains("light");
+  });
+  
+  // Apply theme + persist + sync across tabs/pages
+  useEffect(() => {
+    document.documentElement.classList.toggle("light", isLight);
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  }, [isLight]);
+
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === "theme" && e.newValue) setIsLight(e.newValue === "light");
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);

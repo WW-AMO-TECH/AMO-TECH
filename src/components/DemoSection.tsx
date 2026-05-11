@@ -31,7 +31,7 @@ const DemoSection = () => {
   }, [emblaApi]);
 
   return (
-    <section className="section-padding">
+    <section id="demo" className="section-padding">
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

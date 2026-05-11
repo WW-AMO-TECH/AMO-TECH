@@ -34,8 +34,7 @@ const plans = [
   },
   {
     name: "Premium",
-    text: "From",
-    price: "$5,000",
+    text: "Custom Pricing",
     // period: "/mo",
     description: "Full-scale web application with ongoing development.",
     features: [
@@ -92,7 +91,7 @@ const Pricing = () => {
               )}
               <h3 className="text-lg font-bold mb-1">{plan.name}</h3>
               <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
-              <p className="text-muted-foreground text-sm font-bold mb-2">{plan.text}</p>
+              <p className=" text-xl font-bold mb-2">{plan.text}</p>
               <div className="mb-6">
                 <span className="text-4xl font-extrabold">{plan.price}</span>
               </div>

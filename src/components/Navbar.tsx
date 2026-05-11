@@ -4,8 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 
 const navLinks = [
-  // { label: "Projects", href: "/projects" },
-  // { label: "Contact", href: "/contact-us" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Demo", href: "#demo" },
+  { label: "Process", href: "#process" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Get a Free Audit", href: "#book" },
 ];
 
 const Navbar = () => {

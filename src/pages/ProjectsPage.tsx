@@ -11,6 +11,7 @@ import contactPage from "@/assets/project-contact-page.jpg";
 import adminPhone from "@/assets/project-admin-phone.png";
 import mobileResponsive from "@/assets/project-mobile-responsive.png";
 import galleryPage from "@/assets/project-gallery-page.png";
+import { useEffect, useState } from "react";
 
 type Item = {
   type: "image" | "video";
@@ -32,14 +33,46 @@ const items: Item[] = [
 ];
 
 const Projects = () => {
+  const [isLight, setIsLight] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false;
+    const stored = localStorage.getItem("theme");
+    if (stored) return stored === "light";
+    return !document.documentElement.classList.contains("light");
+  });
+  
+  // Apply theme + persist + sync across tabs/pages
+  useEffect(() => {
+    document.documentElement.classList.toggle("light", isLight);
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  }, [isLight]);
+
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === "theme" && e.newValue) setIsLight(e.newValue === "light");
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
+
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-      <section className="section-padding pt-16">
+      <section className="section-padding pt-6">
         <div className="container-narrow">
-          <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8 transition-colors">
-            <ArrowLeft size={16} /> Back home
-          </Link>
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
+            className="flex justify-start mb-6"
+          >
+            <button
+              onClick={() => window.history.back()}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground bg-muted/50 hover:bg-muted border border-border/50 transition-colors"
+            >
+              <ArrowLeft size={16} />
+              Back to Home
+            </button>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
