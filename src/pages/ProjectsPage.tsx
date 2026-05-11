@@ -125,26 +125,26 @@ const Projects = () => {
                 </div>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-                  <Link
-                    to="/contact-us"
+                  <a
+                    href="/contact-us"
                     className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-all w-full"
                   >
                     Get Something Similar
                     <ArrowRight size={15} />
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             ))}
           </div>
 
           <div className="mt-16 text-center">
-            <Link
-              to="/contact-us"
+            <button
+              onClick={() => window.location.href = "/contact-us"}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.6)] hover:bg-primary/90 transition-all group"
             >
               Start Your Project
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </button>
           </div>
         </div>
       </section>

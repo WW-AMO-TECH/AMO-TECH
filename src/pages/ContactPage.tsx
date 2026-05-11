@@ -123,7 +123,7 @@ const ContactPage = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground bg-muted/50 hover:bg-muted border border-border/50 transition-colors"
             >
               <ArrowLeft size={16} />
-              Back to Home
+              Go Back
             </button>
           </motion.div>
           <motion.p
