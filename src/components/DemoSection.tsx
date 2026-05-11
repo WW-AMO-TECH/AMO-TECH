@@ -112,13 +112,13 @@ const DemoSection = () => {
         </motion.div>
 
         <div className="mt-10 flex justify-center">
-          <Link
-            to="/projects"
+          <button
+            onClick={() => window.location.href = "/projects"}
             className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.6)] hover:bg-primary/90 transition-all"
           >
             View More Projects
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </button>
         </div>
       </div>
     </section>
