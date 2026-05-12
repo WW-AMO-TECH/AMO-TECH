@@ -67,7 +67,7 @@ const CTA = () => {
             {/* Buttons */}
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
               <a
-                href="/contact-us"
+                href="/book"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3 bg-white text-blue-700 font-bold rounded-xl hover:bg-[hsl(217,93%,68%)] hover:text-white transition-all text-base shadow-[0_8px_30px_-8px_hsl(0_84%_60%/0.6)] group"
               >

@@ -35,7 +35,7 @@ const FAQ = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="faq" className="section-padding py-14" ref={ref}>
+    <section id="faq" className="section-padding py-16" ref={ref}>
       <div className="container-narrow max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

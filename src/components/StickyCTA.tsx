@@ -44,7 +44,7 @@ const StickyCTA = () => {
               </p>
             </div>
             <a
-              href="#book"
+              href="/book"
               className="inline-flex items-center gap-1.5 px-3 md:px-4 py-2 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors text-sm whitespace-nowrap"
             >
               <Phone size={14} className="hidden sm:inline" />

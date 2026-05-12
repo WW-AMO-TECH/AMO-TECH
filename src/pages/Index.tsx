@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import CalendlySection from "@/components/CalendlySection";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ"
@@ -23,7 +22,6 @@ const Index = () => {
       <HowItWorks />
       <CTA />
       <Pricing />
-      <CalendlySection />
       <FAQ />
       <Footer />
     </div>

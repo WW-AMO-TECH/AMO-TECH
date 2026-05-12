@@ -9,7 +9,7 @@ const navLinks = [
   { label: "Testimonials", href: "#testimonials" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
-  { label: "Get a Free Audit", href: "#book" },
+  { label: "Get a Free Audit", href: "/book" },
 ];
 
 const Navbar = () => {

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Phone } from "lucide-react";
+import { ArrowRight, ShieldCheck, Laptop, Smartphone, Code2, Terminal, Braces, GitBranch, Database, Cpu, Cloud, Monitor } from "lucide-react";
 import { techIcons } from "./TechIcons";
-import portrait from "@/assets/founder-portrait.jpeg";
 
 const stacks = [
   "React", "Node.js", "TypeScript", "Next.js", "WordPress", "Tailwind CSS",
@@ -15,6 +14,52 @@ const CALENDLY_URL = "https://calendly.com/brightrichmond/consultation";
 const Hero = () => {
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden px-4 py-20 sm:py-0">
+      {/* Animated background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-96 sm:h-96 bg-primary/10 rounded-full blur-[80px] sm:blur-[128px] animate-pulse-glow" />
+        <div className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-80 sm:h-80 bg-[hsl(var(--gradient-end))]/10 rounded-full blur-[80px] sm:blur-[128px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-primary/5 rounded-full blur-[120px] sm:blur-[200px]" />
+        {/* Grid pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: "linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+      </div>
+
+      {/* Floating tech icons */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[
+          { Icon: Laptop, x: "8%", y: "18%", size: 36, dur: 9, delay: 0 },
+          { Icon: Smartphone, x: "85%", y: "22%", size: 28, dur: 11, delay: 1.2 },
+          { Icon: Code2, x: "15%", y: "70%", size: 32, dur: 10, delay: 0.4 },
+          { Icon: Terminal, x: "78%", y: "75%", size: 30, dur: 12, delay: 2 },
+          { Icon: Braces, x: "92%", y: "55%", size: 26, dur: 8, delay: 0.8 },
+          { Icon: GitBranch, x: "5%", y: "45%", size: 28, dur: 13, delay: 1.6 },
+          { Icon: Database, x: "50%", y: "8%", size: 26, dur: 10, delay: 2.4 },
+          { Icon: Cpu, x: "45%", y: "92%", size: 28, dur: 11, delay: 0.6 },
+          { Icon: Cloud, x: "70%", y: "12%", size: 30, dur: 9, delay: 1.8 },
+          { Icon: Monitor, x: "25%", y: "30%", size: 32, dur: 12, delay: 1 },
+        ].map(({ Icon, x, y, size, dur, delay }, i) => (
+          <motion.div
+            key={i}
+            className="absolute text-primary/50 drop-shadow-[0_0_12px_hsl(var(--primary)/0.4)]"
+            style={{ left: x, top: y }}
+            animate={{
+              y: [0, -25, 0, 15, 0],
+              x: [0, 15, 0, -10, 0],
+              rotate: [0, 8, -5, 3, 0],
+            }}
+            transition={{ duration: dur, delay, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Icon size={size} strokeWidth={2.2} />
+          </motion.div>
+        ))}
+      </div>
+
+
       {/* Animated background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-96 sm:h-96 bg-primary/10 rounded-full blur-[80px] sm:blur-[128px] animate-pulse-glow" />
@@ -42,87 +87,19 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-[280px,1fr] gap-10 sm:gap-12 lg:gap-12 items-center">
-          {/* Portrait */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex justify-center lg:justify-start"
-          >
-            <div className="relative">
-              {/* Rotating gradient ring */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-                className="absolute -inset-4 rounded-full"
-                style={{
-                  background: "conic-gradient(from 0deg, hsl(var(--primary)), hsl(var(--gradient-end)), hsl(var(--primary)))",
-                  filter: "blur(14px)",
-                  opacity: 0.55,
-                }}
-              />
-              <div className="absolute -inset-1 rounded-full bg-background" />
-              <img
-                src={portrait}
-                alt="Bright Richmond, founder"
-                width={250}
-                height={250}
-                className="relative w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] lg:w-[250px] lg:h-[250px] rounded-full object-cover border-4 border-primary/40 shadow-2xl"
-              />
-              <div className="absolute -bottom-1 -right-1 sm:bottom-2 sm:right-2 px-3 py-1 rounded-full bg-[hsl(var(--success))] text-white text-[10px] sm:text-xs font-bold shadow-lg flex items-center gap-1 z-10">
-                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                Available
-              </div>
-
-              {/* Floating stat badges */}
-              <motion.div
-                initial={{ opacity: 0, y: 20, x: -10 }}
-                animate={{ opacity: 1, y: 0, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="flex absolute -left-4 sm:-left-10 lg:-left-16 top-2 sm:top-6 items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl bg-background/90 backdrop-blur-md border border-border shadow-xl"
-              >
-                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-primary/15 flex items-center justify-center text-primary font-bold text-xs sm:text-sm">★</div>
-                <div className="text-left">
-                  <div className="text-[9px] sm:text-[10px] uppercase tracking-wider text-muted-foreground leading-none">Avg rating</div>
-                  <div className="text-xs sm:text-sm font-bold leading-tight">4.9 / 5.0</div>
-                </div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: -20, x: 10 }}
-                animate={{ opacity: 1, y: 0, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.75 }}
-                className="flex absolute -right-3 sm:-right-8 lg:-right-14 bottom-4 sm:bottom-10 items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl bg-background/90 backdrop-blur-md border border-border shadow-xl"
-              >
-                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-[hsl(var(--success))]/15 flex items-center justify-center text-[hsl(var(--success))] font-bold text-xs sm:text-sm">+</div>
-                <div className="text-left">
-                  <div className="text-[9px] sm:text-[10px] uppercase tracking-wider text-muted-foreground leading-none">Booked</div>
-                  <div className="text-xs sm:text-sm font-bold leading-tight">20/mo avg</div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
+        <div className="flex justify-center gap-10 sm:gap-12 lg:gap-12 items-center">
 
           {/* Text */}
           <div className="text-center lg:text-left">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="text-sm sm:text-base text-muted-foreground mb-3"
-            >
-              Hi, I'm <span className="font-semibold text-foreground">Richmond</span>,
-            </motion.p>
-
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-[1.75rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 sm:mb-5 text-balance"
             >
-              I Get Roofers{" "}
-              <span className="gradient-text block sm:inline mt-1 sm:mt-0">20 Booked Jobs/Month</span>{" "}
-              <span className="block sm:inline">on Average</span>
+              Roofers,{" "}
+              <span className="gradient-text block sm:inline mt-1 sm:mt-0">I will get you 20 Booked Jobs/Month</span>{" "}
+              <span className="block sm:inline">on Average.</span>
             </motion.h1>
 
             <motion.p
@@ -141,7 +118,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3"
             >
               <a
-                href="#book"
+                href="/book"
                 className="px-6 py-3.5 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all duration-200 flex items-center justify-center gap-2 group text-sm sm:text-base shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.6)]"
               >
                 Get A Free 5-Min Audit. 7 slots left today
