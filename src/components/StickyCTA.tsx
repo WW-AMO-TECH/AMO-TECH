@@ -37,7 +37,7 @@ const StickyCTA = () => {
             </span>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-semibold leading-tight truncate">
-                Get more roofing jobs
+                Get more jobs
               </p>
               <p className="text-xs text-muted-foreground leading-tight truncate">
                 Free strategy call · No commitment

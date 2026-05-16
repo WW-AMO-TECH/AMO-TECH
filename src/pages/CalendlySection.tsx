@@ -63,8 +63,8 @@ const CalendlySection = () => {
           <h2 className="text-3xl md:text-5xl font-bold mt-10 mb-4">
             Get Your <span className="gradient-text">Free 5-Minute Audit</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Pick a time below. We'll show you exactly why your site isn't booking jobs and how to fix it.
+          <p className="text-muted-foreground text-lg font-semibold">
+            Pick a time below. No website yet? No problem. We’ll walk you through what your business is missing online and show you exactly how a high-performing website would look for your service.
           </p>
         </motion.div>
 
@@ -104,7 +104,8 @@ const CalendlySection = () => {
 
           <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <ShieldCheck size={16} className="text-[hsl(var(--success))]" />
-            <span>100% free · No commitment · Not working in 30 days? Get a full refund.</span>
+            <span>100% free · No commitment</span>
+            <ShieldCheck size={16} className="text-[hsl(var(--success))]" />
           </div>
         </motion.div>
       </div>

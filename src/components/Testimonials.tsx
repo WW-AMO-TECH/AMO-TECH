@@ -18,8 +18,8 @@ const testimonials = [
     name: "Tony M.",
     company: "Roofing company owner",
     location: "Dallas, TX",
-    badge: "GAF Certified",
-    badge2: "BBB A+ Rated",
+    badge: "BBB A+ Rated",
+    badge2: "Accredited Service Provider",
     quote: "In just 30 days, we went from 7 to 15 booked jobs. The increase in demand has been huge, we’re now in a much stronger position as a business.",
     rating: 5,
     initials: "TM",
@@ -27,10 +27,10 @@ const testimonials = [
   },
   {
     name: "Mike D.",
-    company: "Roofing contractor",
-    location: "Houston, TX",
+    company: "HVAC technician",
+    location: "Newark, NJ",
     badge: "BBB A+ Rated",
-    badge2: "HAAG Certified",
+    badge2: "Verified Installation Partner",
     quote: "We finally look as professional as we truly are, and that shift has made a noticeable difference. It’s strengthened our brand, improved client trust, and overall has been a real game-changer for our business.",
     rating: 5,
     initials: "MD",
@@ -38,10 +38,10 @@ const testimonials = [
   },
   {
     name: "Carla R.",
-    company: "Roofing company owner",
+    company: "Cleaning company owner",
     location: "Tampa, FL",
-    badge: "Owens Corning Preferred",
-    quote: "Books jobs while I'm on vacation. I can easily manage bookings from my phone. It's like having a full-time management team without the extra costs.",
+    badge: "Elite Service Partner",
+    quote: "I still get jobs while I'm on vacation. I can easily manage bookings from my phone. It's like having a full-time management team without the extra costs.",
     rating: 5,
     initials: "CR",
     screenshot: CarlaR,
@@ -63,12 +63,12 @@ const RoofingTestimonials = () => {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
-          <p className="text-primary font-mono text-sm font-medium mb-3 tracking-wider uppercase">Roofers We've Helped</p>
+          <p className="text-primary font-mono text-sm font-medium mb-3 tracking-wider uppercase">Businesses We've Helped</p>
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Real Results From <span className="gradient-text">Real Roofers</span>
+            Real Results From <span className="gradient-text">Businesses</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Verified case studies from roofing contractors across the country.
+            Verified case studies from service providers across the country.
           </p>
         </motion.div>
 

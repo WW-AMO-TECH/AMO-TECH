@@ -5,13 +5,13 @@ const steps = [
   {
     icon: Search,
     title: "Free Audit",
-    desc: "We analyze your current site, find what's losing you jobs, and show you exactly how to fix it.",
+    desc: "We analyze your current online presence or site.",
     day: "Day 0",
   },
   {
     icon: Rocket,
     title: "Custom Site Live in 7 Days",
-    desc: "We build a roofing site engineered to convert. Mobile-first, fast and ready in one week.",
+    desc: "We build a site engineered to convert. Mobile-first, fast and ready in one week.",
     day: "Day 7",
   },
   {
@@ -34,7 +34,7 @@ const HowItWorks = () => {
           className="text-center mb-14"
         >
           <p className="text-primary font-mono text-sm font-medium mb-3 tracking-wider uppercase">The Process</p>
-          <h2 className="text-3xl md:text-5xl font-bold mb-3">Your Roofing Lead Machine <span className="gradient-text">in 3 Steps</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-3">Your Lead Machine <span className="gradient-text">in 3 Steps</span></h2>
           <p className="text-muted-foreground text-lg">Simple. Fast. Risk-free.</p>
         </motion.div>
 

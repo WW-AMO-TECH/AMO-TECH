@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: "What happens if I want to cancel or make changes?",
-    answer: "You can cancel anytime with 3 days notice for smaller projects and 7 days for larger projects. You retain ownership of your website code and content. For changes, included maintenance hours cover regular updates, and additional work is billed at a transparent hourly rate.",
+    answer: "You can cancel anytime with 3 days notice for smaller projects and 7 days for larger projects and get a full refund. You retain ownership of your website code and content. For changes, included maintenance hours cover regular updates, and additional work is billed at a transparent hourly rate.",
   },
 ];
 

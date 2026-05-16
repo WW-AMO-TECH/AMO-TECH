@@ -5,7 +5,7 @@ const problems = [
   {
     icon: Smartphone,
     title: "No Mobile Optimization",
-    desc: "80% of roofing leads come from phones. A blurry, slow mobile site means customers calling your competitor instead.",
+    desc: "80% of clients come from phones. A blurry, slow or no website means customers calling your competitor instead.",
     stat: "80%",
     statLabel: "of leads on mobile",
   },
@@ -53,11 +53,11 @@ const PainSection = () => {
             <span className="text-xs font-medium text-destructive uppercase tracking-wider">The Problem</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-5 leading-tight">
-            Why Your Roofing Site <br className="hidden md:block" />
-            <span className="text-destructive">Gets 0 Calls</span>
+            Why You <br className="hidden md:block" />
+            <span className="text-destructive">Get 0 Calls</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Most roofers blame the market. The truth? Three silent killers are sending your jobs straight to competitors.
+            Most businesses blame the market. The truth? Three silent killers are sending your jobs straight to competitors.
           </p>
         </motion.div>
 

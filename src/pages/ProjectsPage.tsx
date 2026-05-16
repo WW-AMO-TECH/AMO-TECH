@@ -1,16 +1,19 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft, Play } from "lucide-react";
-import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import heroDark from "@/assets/project-hero-dark.jpg";
-import servicesLight from "@/assets/project-services-light.jpg";
-import galleryMasonry from "@/assets/project-gallery-masonry.jpg";
-import quoteForm from "@/assets/project-quote-form.jpg";
-import contactPage from "@/assets/project-contact-page.jpg";
-import adminPhone from "@/assets/project-admin-phone.png";
-import mobileResponsive from "@/assets/project-mobile-responsive.png";
-import galleryPage from "@/assets/project-gallery-page.png";
+import heroDark from "@/assets/roofing-homepage-4.jpg";
+import servicesLight from "@/assets/roofing-services-1.jpg";
+import galleryMasonry from "@/assets/roofing-homepage-1.jpg";
+import quoteForm from "@/assets/roofing-quote-form.jpg";
+import contactPage from "@/assets/roofing-contact-1.jpg";
+import adminPhone from "@/assets/roofing-mobile-admin.png";
+import mobileResponsive from "@/assets/roofing-mobile-homepage.png";
+import galleryPage from "@/assets/roofing-gallery-2.jpg";
+import homepage from "@/assets/hvac-homepage-1.png";
+import construction from "@/assets/construction-homepage-1.png";
+import hvac from "@/assets/hvac-gallery-1.png";
+import hvacGallery from "@/assets/hvac-gallery-1.png";
+
 import { useEffect, useState } from "react";
 
 type Item = {
@@ -27,9 +30,13 @@ const items: Item[] = [
   { type: "image", src: adminPhone, title: "Roofer Admin Panel", tag: "Admin Page" },
   { type: "image", src: servicesLight, title: "Bright Services Grid", tag: "Services" },
   { type: "image", src: galleryMasonry, title: "Before / After Gallery", tag: "Homepage" },
+  { type: "image", src: homepage, title: "Roofer Admin Panel", tag: "Homepage" },
+  { type: "image", src: construction, title: "Bright Services Grid", tag: "Homepage" },
+  { type: "image", src: hvac, title: "Before / After Gallery", tag: "Gallery" },
   { type: "image", src: quoteForm, title: "Multi-Step Quote Form", tag: "Lead Capture" },
   { type: "image", src: contactPage, title: "Lead Analytics Dashboard", tag: "Contact Page" },
   { type: "image", src: galleryPage, title: "Gallery Page", tag: "Gallery Page" },
+  { type: "image", src: hvacGallery, title: "Before / After Gallery", tag: "Gallery" },
 ];
 
 const Projects = () => {
@@ -82,9 +89,10 @@ const Projects = () => {
           >
             <p className="text-primary font-mono text-sm font-medium mb-3 tracking-wider uppercase">Project Showcase</p>
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Roofing Sites That <span className="gradient-text">Book Jobs</span>
+              Websites That <span className="gradient-text">Book Jobs</span>
             </h1>
             <p className="text-muted-foreground text-lg">
+            <p className="font-semibold"><a href="/contact-us" className="gradient-text underline">Reach out</a> to get a fully custom site built for you.</p> <br />
               Real designs, real results. See what your next site could look like.
             </p>
           </motion.div>

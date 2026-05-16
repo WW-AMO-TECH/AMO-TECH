@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import emailjs from "emailjs-com";
 import { useToast } from "@/components/ui/use-toast";
-import { Clock, Globe, Shield, Zap, Send, MessageCircle, Calendar, Mail, MapPin, ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Clock, Globe, Shield, Zap, Send, Calendar, MapPin, ArrowLeft } from "lucide-react";
 
 const highlights = [
   { icon: Clock, title: "24h Response Time", desc: "We reply to every inquiry within one business day." },
@@ -42,9 +41,11 @@ const ContactPage = () => {
     name: "",
     phoneNumber: "",
     email: "",
+    service: "",
     projectType: "",
     budget: [1000, 5000] as [number, number],
     message: "",
+    heardFrom: "",
   });
 
   const formatPhone = (value: string) => {
@@ -67,9 +68,11 @@ const ContactPage = () => {
       name: formData.name,
       phone_number: formData.phoneNumber,
       email: formData.email,
+      service: formData.service,
       project_type: formData.projectType,
       budget: `$${formData.budget[0]} - $${formData.budget[1]}`,
       message: formData.message,
+      heard_from: formData.heardFrom,
     };
 
     try {
@@ -89,9 +92,11 @@ const ContactPage = () => {
         name: "",
         phoneNumber: "",
         email: "",
+        service: "",
         projectType: "",
         budget: [1000, 5000] as [number, number],
         message: "",
+        heardFrom: "",
       });
     } catch (error) {
       console.error(error);
@@ -182,6 +187,7 @@ const ContactPage = () => {
                       placeholder="Your name"
                     />
                   </div>
+
                   <div>
                     <label className="text-sm font-medium mb-2 block">Phone Number</label>
                     <input
@@ -196,6 +202,7 @@ const ContactPage = () => {
                       className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                     />
                   </div>
+
                   <div>
                     <label className="text-sm font-medium mb-2 block">Email</label>
                     <input
@@ -208,6 +215,32 @@ const ContactPage = () => {
                       placeholder="you@email.com"
                     />
                   </div>
+
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">What service do you provide?</label>
+                    <select
+                      name="service"
+                      value={formData.service}
+                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                      className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-primary/50"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="Cleaning">Home Cleaning & Maintenance</option>
+                      <option value="Plumbing">Plumbing Services</option>
+                      <option value="HVAC">HVAC (Heating & Cooling)</option>
+                      <option value="Electrical">Electrical Services</option>
+                      <option value="Roofing">Roofing & Exterior Services</option>
+                      <option value="Siding">Siding, Windows & Doors</option>
+                      <option value="Construction">Construction & General Contracting</option>
+                      <option value="Remodeling-Renovation">Remodeling & Renovation</option>
+                      <option value="Landscaping">Landscaping & Outdoor Services</option>
+                      <option value="Pest-Control">Pest Control Services</option>
+                      <option value="Appliance-Repair">Appliance & Equipment Repair</option>
+                      <option value="Environmental-Remediation">Environmental Remediation & Hazard Removal</option>
+                      <option value="Other">Other - Specify in the message field</option>
+                    </select>
+                  </div>
+
                   <div>
                     <label className="text-sm font-medium mb-2 block">Project Type</label>
                     <select
@@ -222,7 +255,7 @@ const ContactPage = () => {
                       <option value="Web-App">Web App</option>
                       <option value="E-Commerce">E-Commerce</option>
                       <option value="Redesign">Redesign</option>
-                      <option value="Other">Other</option>
+                      <option value="Other">Other - Specify in the message field</option>
                     </select>
                   </div>
 
@@ -265,6 +298,23 @@ const ContactPage = () => {
                       placeholder="Tell me about your project..."
                       className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-base resize-none focus:outline-none focus:ring-2 focus:ring-primary/50"
                     />
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">How did you hear about us?</label>
+                    <select
+                      name="heard_from"
+                      value={formData.heardFrom}
+                      onChange={(e) => setFormData({ ...formData, heardFrom: e.target.value })}
+                      className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-primary/50"
+                    >
+                      <option value="">Select a response</option>
+                      <option value="Facebook">Facebook</option>
+                      <option value="Instagram">Instagram</option>
+                      <option value="Google">Google</option>
+                      <option value="Referral">Referral</option>
+                      <option value="Other">Other - Specify in the message field</option>
+                    </select>
                   </div>
                 </div>
 

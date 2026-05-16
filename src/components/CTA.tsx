@@ -22,7 +22,7 @@ const CTA = () => {
             {/* Badge */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
               <ShieldCheck size={16} />
-              Trusted by Roofing Contractors
+              Trusted by Businesses
             </div>
 
             {/* Heading */}
@@ -35,7 +35,7 @@ const CTA = () => {
 
             {/* Subtext */}
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-blue-100 md:text-lg">
-              Get a modern roofing website designed to attract more local
+              Get a modern website designed to attract more
               customers, showcase your work professionally, and turn visitors
               into booked jobs.
             </p>

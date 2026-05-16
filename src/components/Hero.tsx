@@ -4,9 +4,8 @@ import { techIcons } from "./TechIcons";
 
 const stacks = [
   "React", "Node.js", "TypeScript", "Next.js", "WordPress", "Tailwind CSS",
-  "PostgreSQL", "MongoDB", "GraphQL", "Docker", "AWS", "Firebase",
-  "Python", "Figma", "Supabase", "Prisma", "Redis", "Vercel",
-  "Vue.js", "Sass", "Git", "Stripe",
+  "PostgreSQL", "MongoDB", "GraphQL", "Docker", "Netlify", "Figma",
+  "Supabase", "Vercel", "Vue.js", "Sass", "Git", "Stripe", "Render",
 ];
 
 const CALENDLY_URL = "https://calendly.com/brightrichmond/consultation";
@@ -79,15 +78,15 @@ const Hero = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex justify-center mt-12 md:mt-16 mb-6"
+          className="visible lg:invisible flex justify-center mt-12 lg:mt-2 md:mt-16 mb-6"
         >
-          <div className="inline-flex items-center gap-2 lg:px-4 px-3 py-2 rounded-full bg-red-600 text-white text-xs sm:text-sm font-bold uppercase tracking-wide shadow-[0_0_24px_hsl(0_84%_60%/0.5)]">
+          <div className="inline-flex items-center gap-2 lg:px-4 px-3 py-2 rounded-full bg-green-600 text-white text-xs sm:text-sm font-bold uppercase tracking-wide shadow-[0_0_24px_hsl(0_84%_60%/0.5)]">
             <ShieldCheck size={16} />
-            Roofers: 20+ Booked Jobs/Month Guaranteed
+            Improve your online visibility
           </div>
         </motion.div>
 
-        <div className="flex justify-center gap-10 sm:gap-12 lg:gap-12 items-center">
+        <div className="flex justify-center gap-10 sm:gap-12 lg:gap-12 items-center pt-4 lg:pt-5">
 
           {/* Text */}
           <div className="text-center lg:text-left">
@@ -95,20 +94,20 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-[1.75rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 sm:mb-5 text-balance"
+              className="text-[1.75rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight pt-6 lg:pt-0 mb-4 sm:mb-5 text-balance"
             >
-              Roofers,{" "}
-              <span className="gradient-text block sm:inline mt-1 sm:mt-0">I will get you 20 Booked Jobs/Month</span>{" "}
-              <span className="block sm:inline">on Average.</span>
+              Helping Companies & Solo Service Providers{" "}
+              <span className="gradient-text block sm:inline mt-1 sm:mt-0">Strengthen Their Online Presence, Build Trust and Get More Customers.</span>{" "}
+              {/* <span className="block sm:inline"></span> */}
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-sm sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-6 text-balance"
+              className="text-sm font-medium sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-6 text-balance"
             >
-              A custom-built roofing website live in 7 days. <br /> <span className="font-semibold text-foreground">Not thrilled or no results in 30 days, you get a full refund.</span>
+              A custom-built website live in 7 days.
             </motion.p>
 
             <motion.div
@@ -133,8 +132,8 @@ const Hero = () => {
               className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs text-muted-foreground font-semibold"
             >
               <span className="flex items-center gap-1.5">⚡ Live in 7 days</span>
-              <span className="flex items-center font-bold gap-1.5"><ShieldCheck size={14} className="text-[hsl(var(--success))]" /> Full refund in 30 days</span>
-              <span className="flex items-center gap-1.5">🛡 50+ roofers helped</span>
+              <span className="flex items-center font-bold gap-1.5"><ShieldCheck size={14} className="text-[hsl(var(--success))]" /><a href="#faq" className="no-underline hover:underline"> Full refund in 30 days</a></span>
+              <span className="flex items-center gap-1.5">🛡 30+ businesses helped</span>
             </motion.div>
           </div>
         </div>
@@ -144,7 +143,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-12 sm:mt-16 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+          className="mt-16 lg:mt-10 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
         >
           <div className="flex animate-marquee whitespace-nowrap gap-3 sm:gap-8 text-muted-foreground/70 text-[0.7rem] sm:text-sm">
             {[...stacks, ...stacks].map((stack, i) => (

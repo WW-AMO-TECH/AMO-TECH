@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import heroDark from "@/assets/project-hero-dark.jpg";
-import servicesLight from "@/assets/project-services-light.jpg";
-import gallery from "@/assets/project-gallery-masonry.jpg";
-import quote from "@/assets/project-quote-form.jpg";
-import contactPage from "@/assets/project-contact-page.jpg";
+import heroDark from "@/assets/hvac-homepage-1.png";
+import servicesLight from "@/assets/roofing-homepage-1.jpg";
+import quote from "@/assets/roofing-quote-form.jpg";
+import gallery from "@/assets/cleaning-homepage-1.png";
+import contactPage from "@/assets/construction-homepage-1.png";
 
 const slides = [
-  { src: heroDark, label: "ApexRoof — Bold Hero" },
+  { src: heroDark, label: "ApexHvac — Bold Hero" },
   { src: servicesLight, label: "PeakPro — Storm Repair Hero" },
-  { src: gallery, label: "Hawthorne — Family Hero" },
   { src: quote, label: "Get a Quote Form" },
-  { src: contactPage, label: "Contact Page" },
+  { src: gallery, label: "Hawthorne Cleaning — Family Hero" },
+  { src: contactPage, label: "Construction — Hero" },
 ];
 
 const DemoSection = () => {
@@ -45,10 +45,11 @@ const DemoSection = () => {
             <span className="text-xs font-medium text-primary uppercase tracking-wider">Live Example</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            See Your Roofing Site <span className="gradient-text">in Motion</span>
+            See Your Website <span className="gradient-text">in Motion</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Real screens from high-converting roofing sites. Swipe, hover to pause.
+            <p className="font-semibold"><a href="/contact-us" className="gradient-text underline">Reach out</a> to get a fully custom site built for you.</p> <br />
+            Real screens from high-converting websites. Swipe, hover to pause.
           </p>
         </motion.div>
 
