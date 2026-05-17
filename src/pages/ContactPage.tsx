@@ -43,7 +43,7 @@ const ContactPage = () => {
     email: "",
     service: "",
     projectType: "",
-    budget: [1000, 5000] as [number, number],
+    price: "",
     message: "",
     heardFrom: "",
   });
@@ -70,7 +70,7 @@ const ContactPage = () => {
       email: formData.email,
       service: formData.service,
       project_type: formData.projectType,
-      budget: `$${formData.budget[0]} - $${formData.budget[1]}`,
+      price: formData.price,
       message: formData.message,
       heard_from: formData.heardFrom,
     };
@@ -94,7 +94,7 @@ const ContactPage = () => {
         email: "",
         service: "",
         projectType: "",
-        budget: [1000, 5000] as [number, number],
+        price: "",
         message: "",
         heardFrom: "",
       });
@@ -171,8 +171,6 @@ const ContactPage = () => {
               className="lg:col-span-3 glass-card p-8 border-2 border-primary glow-border space-y-5"
             >
               <fieldset disabled={loading} className="space-y-5">
-
-                {/* ALL YOUR ORIGINAL FORM CONTENT BELOW (UNCHANGED) */}
 
                 <div className="grid sm:grid-cols-1 gap-5">
                   <div>
@@ -260,30 +258,20 @@ const ContactPage = () => {
                   </div>
 
                   <div>
-                    <label className="text-sm font-medium mb-2 block">Budget</label>
+                    <label className="text-sm font-medium mb-2 block">Price</label>
+                    
                     <select
-                      name="budget"
-                      value={`${formData.budget[0]}-${formData.budget[1]}`}
-                      onChange={(e) => {
-                        const val = e.target.value;
-
-                        const map: Record<string, [number, number]> = {
-                          "1000-2000": [1000, 2000],
-                          "2000-5000": [2000, 5000],
-                          "5000-10000": [5000, 10000],
-                        };
-
-                        setFormData({
-                          ...formData,
-                          budget: map[val] || [1000, 5000],
-                        });
-                      }}
+                      name="price"
+                      value={formData.price}
+                      onChange={(e) => setFormData({ ...formData, price: e.target.value })}
                       className="w-full px-4 py-3 bg-muted border border-border/50 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-primary/50"
                     >
-                      <option value="">Select a budget</option>
-                      <option value="1000-2000">$1,000 - $2,000</option>
-                      <option value="2000-5000">$2,000 - $5,000</option>
-                      <option value="5000-10000">Over $5,000</option>
+                      <option value="">Select a project type</option>
+                      <option value="$50/mo">$50 /mo</option>
+                      <option value="$130/mo">$130 /mo</option>
+                      <option value="$500-one-time">$500 one-time</option>
+                      <option value="$1,500-one-time">$1,500 one-time</option>
+                      <option value="Custom">Custom</option>
                     </select>
                   </div>
 
